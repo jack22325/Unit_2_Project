@@ -7,12 +7,17 @@ public class LinearEquation
     private int x2Value;
     private int y2Value;
 
-    public LinearEquation(int x, int y, int x2, int y2)
+    public LinearEquation (int x, int y, int x2, int y2)
     {
         xValue = x;
         yValue = y;
         x2Value = x2;
         y2Value = y2;
+    }
+
+    public String firstCoordinate()
+    {
+        return "(" + xValue + ", " + yValue + ")";
     }
 
     public int calculateXDistance()
@@ -38,6 +43,11 @@ public class LinearEquation
     public String slopeString()
     {
         return calculateYDistance() + "/" + calculateXDistance();
+    }
+
+    public double calculateSlope()
+    {
+        return calculateYDistance()/calculateXDistance();
     }
 
 }
