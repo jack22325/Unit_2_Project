@@ -15,7 +15,7 @@ public class LinearEquation
         y2Value = y2;
     }
 
-    public String firstCoordinate()
+    public String coordinate()
     {
         return "(" + xValue + ", " + yValue + ")";
     }
