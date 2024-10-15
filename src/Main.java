@@ -35,7 +35,7 @@ public class Main {
         int comma2 = secondCoordinate.indexOf(",");
 
         // Get a substring of -1
-        String secondX = secondCoordinate.substring(opening2+1,comma);
+        String secondX = secondCoordinate.substring(opening2+1,comma2);
 
         // Get a substring of 1
         String secondY = secondCoordinate.substring(comma2+1,closing2);
