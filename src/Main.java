@@ -6,14 +6,12 @@ public class Main {
         System.out.print("Enter the first coordinate point");
         Scanner o = new Scanner(System.in);
         String firstCoordinate = o.nextLine();
-        System.out.println("First Pair: " + firstCoordinate);
         System.out.print("Enter the second coordinate point");
         Scanner t = new Scanner(System.in);
         String secondCoordinate = t.nextLine();
-        System.out.println("Second Pair: " + secondCoordinate);
         int opening = firstCoordinate.indexOf("(");
 
-        // Find the index of the )
+        // Find the index of the
         int closing = firstCoordinate.indexOf(")");
 
         // Find the index of ,
@@ -30,21 +28,32 @@ public class Main {
 
         int opening2 = secondCoordinate.indexOf("(");
 
-        // Find the index of the )
+        // Find the index of the
         int closing2 = secondCoordinate.indexOf(")");
 
         // Find the index of ,
         int comma2 = secondCoordinate.indexOf(",");
 
         // Get a substring of -1
-        String secondX = secondCoordinate.substring(opening+1,comma);
+        String secondX = secondCoordinate.substring(opening2+1,comma);
 
         // Get a substring of 1
-        String secondY = secondCoordinate.substring(comma+1,closing);
+        String secondY = secondCoordinate.substring(comma2+1,closing2);
 
         int x2 = Integer.parseInt(secondX);
         int y2 = Integer.parseInt(secondY);
-        LinearEquation equation = new LinearEquation(x,y,x2,y2);
-        System.out.println(equation.calculateYDistance());
+        LinearEquation equation = new LinearEquation(x, y, x2, y2);
+        System.out.println("First pair: " + firstCoordinate);
+        System.out.println("Second pair: " + secondCoordinate);
+        System.out.println("Slope of line: " + equation.calculateSlope());
+        System.out.println("Y-intercept: " + equation.yIntercept());
+        System.out.println("Slope intercept form: " + equation.slopeInterceptForm());
+        System.out.println("Distance between points: " + equation.calculateTotalDistance());
+        System.out.print("Enter a third x value");
+        Scanner v = new Scanner(System.in);
+        String third = v.nextLine();
+        double doubleThird = Double.parseDouble(third);
+        double thirdOutput = equation.findOutputOfThirdValue(doubleThird);
+        System.out.println("Third coordinate point: " + "(" + doubleThird + "," + thirdOutput + ")");
     }
 }

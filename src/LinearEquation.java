@@ -32,12 +32,12 @@ public class LinearEquation
 
     public double calculateTotalDistanceSquared()
     {
-        return ((calculateYDistance()*calculateYDistance())*(calculateXDistance()*calculateXDistance()));
+        return ((calculateYDistance()*calculateYDistance())+(calculateXDistance()*calculateXDistance()));
     }
 
     public double calculateTotalDistance()
     {
-        return Math.sqrt((int) calculateTotalDistanceSquared()*100)/100.0;
+        return (Math.sqrt((int) calculateTotalDistanceSquared())*100)/100.0;
     }
 
     public String slopeString()
@@ -47,7 +47,22 @@ public class LinearEquation
 
     public double calculateSlope()
     {
-        return calculateYDistance()/calculateXDistance();
+        return (calculateYDistance()/calculateXDistance());
+    }
+
+    public double yIntercept()
+    {
+        return yValue - calculateSlope()*xValue;
+    }
+
+    public String slopeInterceptForm()
+    {
+        return "y = " + slopeString() + "x" + " + " + yIntercept();
+    }
+
+    public double findOutputOfThirdValue(double thirdValue)
+    {
+        return calculateSlope()*thirdValue + yIntercept();
     }
 
 }
