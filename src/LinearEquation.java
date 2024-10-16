@@ -15,17 +15,12 @@ public class LinearEquation
         y2Value = y2;
     }
 
-    public String coordinate()
-    {
-        return "(" + xValue + ", " + yValue + ")";
-    }
-
-    public int calculateXDistance()
+    public double calculateXDistance()
     {
         return (x2Value - xValue);
     }
 
-    public int calculateYDistance()
+    public double calculateYDistance()
     {
         return (y2Value-yValue);
     }
@@ -37,7 +32,7 @@ public class LinearEquation
 
     public double calculateTotalDistance()
     {
-        return (Math.sqrt((int) calculateTotalDistanceSquared())*100)/100.0;
+        return ((int)(Math.sqrt(calculateTotalDistanceSquared())*100))/100.00;
     }
 
     public String slopeString()
@@ -57,12 +52,11 @@ public class LinearEquation
 
     public String slopeInterceptForm()
     {
-        return "y = " + slopeString() + "x" + " + " + yIntercept();
+        return "y = " + slopeString() + "x" + " + " + ((int)(yIntercept())*100)/100.00;
     }
 
     public double findOutputOfThirdValue(double thirdValue)
     {
-        return calculateSlope()*thirdValue + yIntercept();
+        return ((int)((calculateSlope()*thirdValue + yIntercept())*100))/100.00;
     }
-
 }

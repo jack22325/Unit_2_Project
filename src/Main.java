@@ -45,8 +45,8 @@ public class Main {
         LinearEquation equation = new LinearEquation(x, y, x2, y2);
         System.out.println("First pair: " + firstCoordinate);
         System.out.println("Second pair: " + secondCoordinate);
-        System.out.println("Slope of line: " + equation.calculateSlope());
-        System.out.println("Y-intercept: " + equation.yIntercept());
+        System.out.println("Slope of line: " + ((int)(equation.calculateSlope())*100)/100.00);
+        System.out.println("Y-intercept: " + ((double)((int)(equation.yIntercept())*100)/100.00));
         System.out.println("Slope intercept form: " + equation.slopeInterceptForm());
         System.out.println("Distance between points: " + equation.calculateTotalDistance());
         System.out.print("Enter a third x value");
